@@ -1,0 +1,67 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Python packaging
+*.egg-info/
+dist/
+wheelhouse/
+pip-wheel-metadata/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Native build artifacts
+build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+Makefile
+compile_commands.json
+.ninja_deps
+.ninja_log
+
+# Compiled native modules
+*.so
+*.dylib
+*.dll
+*.o
+*.obj
+*.a
+*.lib
+*.ptx
+*.cubin
+*.fatbin
+
+# CMake user-local configuration
+CMakeUserPresets.json
+
+# Local environment reports
+environment.json
+
+# Profiling and sanitizer output
+nsys-rep/
+ncu-rep/
+*.nsys-rep
+*.ncu-rep
+compute-sanitizer*.log
+asan*.log
+ubsan*.log
+
+# Editors
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Operating-system files
+.DS_Store
+Thumbs.db

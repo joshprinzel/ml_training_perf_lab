@@ -1,0 +1,40 @@
+[build-system]
+requires = [
+    "scikit-build-core>=1.0,<2",
+    "torch",
+]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "ml-training-perf"
+version = "0.0.1"
+description = "Single-node ML training systems and performance laboratory"
+requires-python = ">=3.10"
+dependencies = [
+    "torch",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=8",
+]
+
+[tool.scikit-build]
+minimum-version = "1.0"
+cmake.version = ">=3.30,<4"
+ninja.version = ">=1.10"
+cmake.build-type = "Debug"
+build-dir = "build/{wheel_tag}"
+build.verbose = true
+editable.verbose = true
+logging.level = "DEBUG"
+install.strip = false
+wheel.packages = ["python/ml_training_perf"]
+
+[tool.scikit-build.cmake.define]
+MLTP_ENABLE_CUDA = { env = "MLTP_ENABLE_CUDA", default = "ON" }
+CMAKE_CUDA_ARCHITECTURES = { env = "MLTP_CUDA_ARCHITECTURES", default = "89" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
